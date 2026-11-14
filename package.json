@@ -1,1 +1,2 @@
-{"name":"study-notes-utility","version":"1.0.0","description":"General study notes application backend","main":"mod_1.js","scripts":{"start":"node mod_1.js"}} 
+{"name":"study-notes-utility","version":"1.0.0","description":"General study notes application backend","main": "mod_1.js","scripts":{"start": "node mod_1.js"}} 
+
