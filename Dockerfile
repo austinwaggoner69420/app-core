@@ -1,12 +1,7 @@
-FROM node:bookworm-slim
-ENV NODE_ENV=production
-
-WORKDIR /app
-
-COPY ["package.json", "./"]
-
-RUN npm install
-
-COPY . .
-
-CMD [ "node", "src/server.js" ]
+FROM node:20-alpine 
+WORKDIR /app 
+COPY package*.json ./ 
+RUN npm install 
+COPY . . 
+EXPOSE 3000 
+CMD ["npm", "start"] 
