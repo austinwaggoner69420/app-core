@@ -3,7 +3,7 @@
   "version": "6.3.0",
   "private": true,
   "scripts": {
-    "start": "node mod_1.js"
+    "start": "node index.js"
   }
 }
 
