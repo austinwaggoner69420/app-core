@@ -1,15 +1,18 @@
-﻿import http from "http";
+﻿import express from "express";
+import path from "path";
+import { fileURLToPath } from "url";
 import "./mod_1.js";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const app = express();
 const PORT = process.env.PORT || 3000;
 
-const server = http.createServer((req, res) => {
-  // If mod_1 handles requests, let it, otherwise return fallback
-  res.writeHead(200, { "Content-Type": "text/html" });
-  res.end("<!DOCTYPE html><html><head><title>Interstellar</title></head><body><h1>Interstellar Running</h1></body></html>");
-});
+// Serve static frontend files from the static directory
+app.use(express.static(path.join(__dirname, "static")));
 
-server.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
+app.listen(PORT, () => {
+  console.log(`Interstellar server running on port ${PORT}`);
 });
 
